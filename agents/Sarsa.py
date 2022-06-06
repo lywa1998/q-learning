@@ -6,8 +6,8 @@ class Sarsa:
     def __init__(self,
                  obs_dim,
                  action_dim,
-                 learning_rate=0.01,
-                 gamma=0.9,
+                 learning_rate=0.5,
+                 gamma=1,
                  epsilon=0.1):
         self.action_dim = action_dim  # 动作维度，有几个动作可选
         self.lr = learning_rate  # 学习率

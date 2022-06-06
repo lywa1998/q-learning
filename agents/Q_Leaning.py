@@ -1,13 +1,14 @@
 import torch
 import numpy as np
+import random
 
 
 class QLearning:
     def __init__(self,
                  obs_dim,
                  action_dim,
-                 learning_rate=0.01,
-                 gamma=0.9,
+                 learning_rate=0.5,
+                 gamma=1,
                  epsilon=0.1):
         self.action_dim = action_dim  # 动作维度，有几个动作可选
         self.lr = learning_rate  # 学习率
@@ -18,7 +19,7 @@ class QLearning:
     def sample(self, obs):
         '''根据输入观测值，采样输出的动作值，带探索，训练模型时使用
         '''
-        if np.random.uniform(0, 1) > self.epsilon:  # 随机选取0-1之间的值，如果大于epsilon就按照贪心策略选取action，否则随机选取
+        if random.random() >= self.epsilon:  # 随机选取0-1之间的值，如果大于等于epsilon就按照贪心策略选取action，否则随机选取
             action = self.predict(obs)
         else:
             action = np.random.choice(self.action_dim)  #有一定概率随机探索选取一个动作
