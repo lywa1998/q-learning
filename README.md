@@ -18,6 +18,15 @@
 └── visual.py
 ```
 
+# 运行
+```bash
+# 训练
+python --agent [qlearning | sarsa] --train
+
+# 验证
+python --agent [qlearning | sarsa]
+```
+
 # TODO
 - [X] Train代码
 - [x] Test代码
