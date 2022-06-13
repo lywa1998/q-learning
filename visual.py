@@ -1,9 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-data = np.zeros((500,))
-data1 = np.load(f"./save/qlearning.npy")
-data2 = np.load("./save/sarsa.npy")
+data = np.zeros((500,))  #
+data1 = np.load(f"./save/reward-qlearning.npy")
+data2 = np.load("./save/reward-sarsa.npy")
 plt.plot(data1, label='Q-Learning')
 plt.plot(data2, label='Sarsa')
 plt.xlabel("Episode")
